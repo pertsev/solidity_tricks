@@ -38,3 +38,21 @@ So, ethers of attacker are locked forever (for him).
 
 ## Description:
 Example of `withdraw` function with some tip to avoid DOS.
+
+# Send ether via selfdestruct. 
+
+## Description:
+The another way to send ether to contract is `selfdestruct` func. There is no way for contract-recipient to avoid it!
+Not by `throw` in fallback func or by destructing recipient-contract itself even. 
+
+Notice, ether can be sent to non-existent contract also ([Address of future contract can be computed easily](https://ethereum.stackexchange.com/questions/760/how-is-the-address-of-an-ethereum-contract-computed)) 
+
+### To reproduce:
+
+1. Copy-paste `selfdestruct.sol` to remix (or use `Connect to localhost` feature) and deploy all contracts 
+(don't forget send a few ethers with `Sender` contract creation).
+2. Call `Receiver.kill`.
+3. Call `Sender.attack` with `Receiver` address.
+4. Check `Sender` balance (should be above zero).
+
+ 

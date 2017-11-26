@@ -1,3 +1,5 @@
+pragma solidity 0.4.18;
+
 contract Array {
     uint[] public array;
     address public owner;
