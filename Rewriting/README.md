@@ -19,7 +19,8 @@ keccak256 range, but the array length has uint256 type. So, as [others](https://
 it can be (over|under)flowed by `array.length--` e.g. 
 
 [Solidity documentation about memories](http://solidity.readthedocs.io/en/develop/miscellaneous.html#layout-of-state-variables-in-storage)
-[Example inspired by](https://github.com/Arachnid/uscc/tree/master/submissions-2017/doughoyte)
+
+[Example inspired by MerdeToken](https://github.com/Arachnid/uscc/tree/master/submissions-2017/doughoyte)
 
 ### To reproduce:
 
