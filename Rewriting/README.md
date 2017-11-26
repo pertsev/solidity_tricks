@@ -25,7 +25,7 @@ it can be (over|under)flowed by `array.length--` e.g.
 
 1. Copy-paste `arrayLengthUnderflow.sol` to remix (or use `Connect to localhost` feature) and deploy `Array` contract. 
 2. See Storage memory at debugger: 
-```json
+```
 {
    "0x290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e563":{
       // Slot for array length
@@ -50,7 +50,7 @@ it can be (over|under)flowed by `array.length--` e.g.
 }
 ```
 3. Call `underflow` function 3 times and see Storage: 
-```json
+```
 {
    "0xb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf6":{
       // owner
@@ -72,7 +72,7 @@ it can be (over|under)flowed by `array.length--` e.g.
 4. Let's overwrite `owner`? Call `modify` with that args:
 `"0xd6f21326ab749d5729fcba5677c79037b459436ab7bff709c9d06ce9f10c1a9e", "0xdeadbeef"`
 And see storage now:
-```json
+```
 {
    "0x290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e563":{
       "key":"0x0000000000000000000000000000000000000000000000000000000000000000",
@@ -88,7 +88,7 @@ And see storage now:
 
 Stop. How have you known the index `"0xd6f21326ab749d5729fcba5677c79037b459436ab7bff709c9d06ce9f10c1a9e"`?
 Ok. Check following Python code to clarification:
-```python
+```
         //array length   //sha3(0x00)                                                         //owner's slot number
 >>> hex(2**256         - 0x290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e563 + 1                    )
 '0xd6f21326ab749d5729fcba5677c79037b459436ab7bff709c9d06ce9f10c1a9eL'
