@@ -1,0 +1,15 @@
+{
+  "name": "dynamic_types_length_dependency",
+  "version": "1.0.0",
+  "description": "## Description: The example concerns the length of ABI-encoded arrays, strings, bytes. The length is part of the ABI payload, and can be set by caller(!) to almost arbitrary values.",
+  "main": "exploit.js",
+  "dependencies": {
+    "web3": "0.14.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "@_p4lex",
+  "license": "ISC"
+}
